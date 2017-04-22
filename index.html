@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>The Parking</title>
+        <!--<meta http-equiv="refresh" content="10"/>  -->
+        <link rel="shortcut icon" href="img/parking.png">
+        <meta name="theme-color" content="#00a651">  
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+         <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+
+        <script src="js/config.js"></script>
+     
+        <script src="js/custom.js"></script>
+    </head>
+   <center> <body class="container-fluid" ng-controller="Ctrl">
+       <a href="switch.html" target="_blank"><button class="btn-success">Parking Switch</button></a>
+        <h1>PARKING</h1>
+        <p class="text-center">&copy; Copyrighted by Sunil Jose &amp; Rahul Prabhakar</p>
+
+        <div id="top-pad"></div>
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+        <img src="img/car.png" id="c1" class="animated slideInUp " ng-if= "details['A']==1" >
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3 ">
+        <img src="img/car1.png" id="c2" class="animated slideInUp" ng-if= "details['B']==1">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+        <img src="img/car2.png" id="c3" class="animated slideInUp" ng-if= "details['C']==1">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3 " >
+        <img src="img/car3.png" id="c4" class="animated slideInUp" ng-if= "details['D']==1">
+            </div>
+        </div>
+       </body></center>
+</html>

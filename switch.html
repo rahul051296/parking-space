@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head >
+    <title>Parking Switch</title>
+     <link rel="shortcut icon" href="img/parking.png">
+    <meta name="theme-color" content="#333">  
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/style1.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+         
+    
+</head>
+<body ng-controller="Ctrl">
+        <p>Parking Switch</p>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3 pads">
+    <h3 class="text-center">Parking Slot 1</h3>
+    
+<label class="switch">
+  <input type="checkbox" id="cb1" onclick="checkFunc()">
+  <div class="slider round"></div>
+</label>
+    </div>
+    
+    
+         <div class="col-md-3 pads">
+        <h3 class="text-center">Parking Slot 2</h3>
+<label class="switch">
+  <input type="checkbox" id="cb2" onclick="checkFunc()">
+  <div class="slider round"></div>
+</label>
+    </div>
+       
+         <div class="col-md-3 pads">
+        <h3 class="text-center">Parking Slot 3</h3>
+<label class="switch">
+  <input type="checkbox" id="cb3" onclick="checkFunc()">
+  <div class="slider round"></div>
+</label>
+    </div>
+    
+   
+         <div class="col-md-3 pads">
+        <h3 class="text-center">Parking Slot 4</h3>
+<label class="switch">
+  <input type="checkbox" id="cb4" onclick="checkFunc()">
+  <div class="slider round"></div>
+</label>
+    </div>
+    </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+         <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.ajax({url: "retrieve.php", success: function(result){
+                    if(result['A']==1)
+                        {
+                    $( '#cb1' ).attr( 'checked', true );
+                        }
+                    if(result['B']==1)
+                        {
+                    $( '#cb2' ).attr( 'checked', true );
+                        }
+                    if(result['C']==1)
+                        {
+                    $( '#cb3' ).attr( 'checked', true );
+                        }
+                    if(result['D']==1)
+                        {
+                    $( '#cb4' ).attr( 'checked', true );
+                        }
+                
+                }});
+                });
+            
+            function checkFunc() {
+            var a = document.getElementById("cb1").checked;
+                if(a == true)
+                    {
+                        var A = 1;
+                    }
+                else if(a == false)
+                    {
+                        A = 0;
+                    }
+            var b = document.getElementById("cb2").checked;
+                if(b == true)
+                    {
+                        var B = 1;
+                    }
+                else if(b == false)
+                    {
+                        B = 0
+                    }
+            var c = document.getElementById("cb3").checked;
+                if(c == true)
+                    {
+                        var C = 1;
+                    }
+                else if(c == false)
+                    {
+                        C = 0
+                    }
+            var d = document.getElementById("cb4").checked;
+                if(d == true)
+                    {
+                        var D = 1;
+                    }
+                else if(d == false)
+                    {
+                        D = 0
+                    }
+            $(document).ready(function(){
+                $.ajax({url: "update.php?A=" +A+ "&B="+B+"&C="+C+"&D="+D, success: function(result){
+                }});
+                });
+        }
+            
+    </script>
+       
+     
+        <script src="js/custom.js"></script>
+</body>
+</html> 
