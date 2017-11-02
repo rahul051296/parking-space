@@ -57,7 +57,7 @@
          <script src="js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function(){
-                $.ajax({url: "retrieve.php", success: function(result){
+                $.ajax({url: "http://theparkingspace.000webhostapp.com/retrieve.php", success: function(result){
                     if(result['A']==1)
                         {
                     $( '#cb1' ).attr( 'checked', true );
@@ -116,7 +116,7 @@
                         D = 0
                     }
             $(document).ready(function(){
-                $.ajax({url: "update.php?A=" +A+ "&B="+B+"&C="+C+"&D="+D, success: function(result){
+                $.ajax({url: "http://theparkingspace.000webhostapp.com/update.php?A=" +A+ "&B="+B+"&C="+C+"&D="+D, success: function(result){
                 }});
                 });
         }

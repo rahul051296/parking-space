@@ -44,9 +44,10 @@ a button
     font-size: .8em;
     font-family: myFont;
     padding: 8px;
-    box-shadow: -1px 1px 10px 0.1px rgba(0,0,0,0.35);
-
-    
+    box-shadow: -1px 1px 10px 0.1px rgba(0,0,0,0.35);   
+}
+a button:focus{
+    outline: none;
 }
 @media only screen and (max-width: 1260px) and (min-width: 1026px) 
 {
